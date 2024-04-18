@@ -1,2 +1,5 @@
 #!/bin/bash
-python $PYFILE
+if [ -z "$PYFILE" ] || [ ! -f "$PYFILE" ]; then
+	exit 1
+fi
+python -m pycodestyle $PYFILE
