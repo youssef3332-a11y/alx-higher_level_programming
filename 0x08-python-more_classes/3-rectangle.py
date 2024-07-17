@@ -87,4 +87,6 @@ class Rectangle:
         else:
             return (self.__width * 2) + (self.__height * 2)
     def __str__(self):
+        if self.width == 0 or self.height == 0:
+            return ""
         return (("#" * self.width + "\n") * (self.height - 1) + "#" * self.width)
