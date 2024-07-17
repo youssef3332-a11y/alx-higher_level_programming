@@ -20,8 +20,8 @@ class Rectangle:
         this:
         a constractor
         """
-        self.height = height
-        self.width = width
+        self.__height = height
+        self.__width = width
     @property
     def width(self):
         """
