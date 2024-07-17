@@ -20,14 +20,14 @@ class Rectangle:
         this:
         a constractor
         """
-        self.__height = height
-        self.__width = width
+        self.height = height
+        self.width = width
     @property
     def width(self):
         """
         retrive
         """
-        return __width
+        return self.__width
     @width.setter
     def width(self, value):
         """
@@ -45,7 +45,7 @@ class Rectangle:
         getter
         height
         """
-        return __height
+        return self.__height
     @height.setter
     def height(self, value):
         """
