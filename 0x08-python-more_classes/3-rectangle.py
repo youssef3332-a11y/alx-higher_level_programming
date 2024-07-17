@@ -87,7 +87,7 @@ class Rectangle:
         else:
             return (self.__width * 2) + (self.__height * 2)
     def __str__(self):
-        return ("#" * self.width + "\n") * (self.height - 1) + "#" * self.width
+        return (("#" * self.width + "\n") * (self.height - 1) + "#" * self.width)
 my_rectangle = Rectangle(2, 4)
 print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
 
