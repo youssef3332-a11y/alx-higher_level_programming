@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" first code in inheritance"""
+"""
+ first code in inheritance
+"""
 def lookup(obj):
     """
     simple function
