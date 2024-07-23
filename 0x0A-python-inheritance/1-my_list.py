@@ -8,5 +8,7 @@ class MyList(list):
         """ sort
         function
         """
-        print(sorted(self))
+        li = self[:]
+        li.sort()
+        print(li)
         
