@@ -1,4 +1,4 @@
-# !/usr/bin/python3
+#!/usr/bin/python3
 """
 module
 ..
@@ -9,7 +9,7 @@ class Rectangle(Base):
     """
     discreption
     """
-    
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         function discreption
