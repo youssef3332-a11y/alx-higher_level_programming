@@ -1,0 +1,42 @@
+module test pour 5-text_indentation.py
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+test 1
+>>> text_indentation("Holberton School")
+Holberton School
+
+
+test2
+>>> text_indentation("Holberton.School")
+Holberton.
+<BLANKLINE>
+School
+
+test3
+>>> text_indentation("Holberton. School? How are you: John")
+Holberton.
+<BLANKLINE>
+School?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+John
+
+test4
+>>> text_indentation(12)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+test5
+
+>>> text_indentation("youssef\n")
+youssef
+
+test6
+
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
