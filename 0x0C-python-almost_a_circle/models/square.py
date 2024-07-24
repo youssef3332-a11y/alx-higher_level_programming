@@ -33,12 +33,13 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """ update the attributes"""
+        h = "_Rectangle__height"
         if args:
             list_attributes = list(self.__dict__.keys())
             del list_attributes[2]
             for i in range(len(args)):
                 self.__dict__[list_attributes[i]] = args[i]
-            self.__dict__["_Rectangle__height"] = self.__dict__["_Rectangle__width"]
+            self.__dict__[h] = self.__dict__["_Rectangle__width"]
         else:
             for key, value in kwargs.items():
                 if key == "id":
@@ -49,4 +50,4 @@ class Square(Rectangle):
                     managed = "_Rectangle__{}".format(key)
                 if managed in self.__dict__:
                     self.__dict__[managed] = value
-            self.__dict__["_Rectangle__height"] = self.__dict__["_Rectangle__width"]
+            self.__dict__[h] = self.__dict__["_Rectangle__width"]
