@@ -100,5 +100,6 @@ class Rectangle(Base):
         """ to dictionary"""
         dic = {}
         for key, value in self.__dict__.items():
-            dic[key] = value
+            list = key.split('__')
+            dic[list[-1]] = value
         return dic
