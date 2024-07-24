@@ -81,8 +81,17 @@ class Rectangle(Base):
         result += "{}/{}".format(self.width, self.height)
         return result
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ update the attributes"""
-        list_attributes = list(self.__dict__.keys())
-        for i in range(len(args)):
-            self.__dict__[list_attributes[i]] = args[i]
+        if args:
+            list_attributes = list(self.__dict__.keys())
+            for i in range(len(args)):
+                self.__dict__[list_attributes[i]] = args[i]
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    managed = "id"
+                else:
+                    managed = "_Rectangle__{}".format(key)
+                if managed in self.__dict__:
+                    self.__dict__[managed] = value
