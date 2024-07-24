@@ -72,3 +72,10 @@ class Rectangle(Base):
         """display with #"""
         result = ('#' * self.width + '\n') * self.height
         print(result, end='')
+
+    def __str__(self):
+        """overriding __str__"""
+        result = "[{}] ({}) ".format(self.__class__.__name__, self.id)
+        result += "{}/{} - ".format(self.x, self.y)
+        result += "{}/{}".format(self.width, self.height)
+        return result
