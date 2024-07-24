@@ -30,3 +30,23 @@ class Square(Rectangle):
         self.validate_integer("width", value, False)
         self.height = value
         self.width = value
+
+    def update(self, *args, **kwargs):
+        """ update the attributes"""
+        if args:
+            list_attributes = list(self.__dict__.keys())
+            del list_attributes[2]
+            for i in range(len(args)):
+                self.__dict__[list_attributes[i]] = args[i]
+            self.__dict__["_Rectangle__height"] = self.__dict__["_Rectangle__width"]
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    managed = "id"
+                elif key == "size":
+                    managed = "_Rectangle__width"
+                else:
+                    managed = "_Rectangle__{}".format(key)
+                if managed in self.__dict__:
+                    self.__dict__[managed] = value
+            self.__dict__["_Rectangle__height"] = self.__dict__["_Rectangle__width"]
