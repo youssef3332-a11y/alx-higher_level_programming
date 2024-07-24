@@ -1,7 +1,7 @@
-#!/usr/bin/python3
+# !/usr/bin/python3
 '''Module for Rectangle class.'''
 
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -80,3 +80,9 @@ class Rectangle(Base):
         result += "{}/{} - ".format(self.x, self.y)
         result += "{}/{}".format(self.width, self.height)
         return result
+
+    def update(self, *args):
+        """ update the attributes"""
+        list_attributes = list(self.__dict__.keys())
+        for i in range(len(args)):
+            self.__dict__[list_attributes[i]] = args[i]

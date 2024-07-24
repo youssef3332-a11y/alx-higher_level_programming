@@ -1,8 +1,10 @@
-from models import teest
-def func(arg, *args, **kwargs):
-    print("arg:{}".format(arg))
-    print("args:{}".format(args))
-    print("kwargs:{}".format(kwargs))
-    
-    
-func(1, 2, 3, 4, midle=5, six=6, seven=7)
+class rectangle:
+    def __init__(self, width, height):
+       self.width = width
+       self.height = height 
+    def func(self, *args):
+        for i in range(len(args)):
+            
+        print(len(args))
+r=rectangle(3,5)
+r.func(4,34,5,6)
