@@ -51,3 +51,13 @@ class Square(Rectangle):
                 if managed in self.__dict__:
                     self.__dict__[managed] = value
             self.__dict__[h] = self.__dict__["_Rectangle__width"]
+
+    def to_dictionary(self):
+        """to dictionary"""
+        dic = {}
+        for key, value in self.__dict__.items():
+            list = key.split('__')
+            dic[list[-1]] = value
+        dic["size"] = dic.pop("height")
+        del dic["width"]
+        return dic
