@@ -13,3 +13,18 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """Returns the JSON string representation of list_dictionaries."""
+        import json
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
+        return json.dumps(list_dictionaries)
+
+    def save_to_file(cls, list_objs):
+        """save to file"""
+        import json
+        json = self.to_json_string(list_objs)
+        name = "{}.json".format(cls)
+        with open(name, "w") as f:
+            f.write(json)
