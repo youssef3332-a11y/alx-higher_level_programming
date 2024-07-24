@@ -95,3 +95,10 @@ class Rectangle(Base):
                     managed = "_Rectangle__{}".format(key)
                 if managed in self.__dict__:
                     self.__dict__[managed] = value
+
+    def to_dictionary(self):
+        """ to dictionary"""
+        dic = {}
+        for key, value in self.__dict__.items():
+            dic[key] = value
+        return dic
