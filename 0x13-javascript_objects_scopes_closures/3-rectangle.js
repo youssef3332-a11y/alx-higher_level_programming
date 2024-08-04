@@ -8,7 +8,7 @@ class Rectangle {
   }
 
   print () {
-    return ('#'.repeat(this.w) + '\n').repeat(this.h - 1) + '#'.repeat(this.w);
+    console.log('#'.repeat(this.width) + '\n').repeat(this.height - 1) + '#'.repeat(this.w);
   }
 }
 module.exports = Rectangle;
